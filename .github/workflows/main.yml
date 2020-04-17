@@ -1,0 +1,33 @@
+name: Flutter Web
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build Web
+    env:
+      my_secret: ${{secrets.commit_secret}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: 'dev'
+      - run: |
+          cd src/generate
+          flutter pub get
+      - run: |
+          cd src/generate
+          dart bin/generateProject.dart
+      - run: |
+          cd web
+          git init
+          git config --global user.email flutter@jaimeblasco.com
+          git config --global user.name gallery-bot
+          git status
+          git remote add origin https://${{secrets.commit_secret}}@github.com/gallery-bot/gjkh.git
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "Update web"
+          git push origin gh-pages -f
