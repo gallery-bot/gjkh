@@ -1,0 +1,32 @@
+simple_material_app:
+  title: Simple Material App
+  description: A simple material app
+  git: 
+    url: https://github.com/nisrulz/flutter-examples/
+    path: simple_material_app/
+
+
+flutter-draggable-scrollbar:
+  title: Draggable Scrollbar   
+  description:  A scrollbar that can be dragged for quickly navigation through a vertical list. Additional option is showing label next to scrollthumb with information about current item. 
+  git:
+    url: https://github.com/fluttercommunity/flutter-draggable-scrollbar/
+    path: example/
+
+
+persist_theme:
+  title: Persist theme
+  description: A Flutter plugin for persisting and dynamically changing the theme.
+  git:
+    url: https://github.com/fluttercommunity/persist_theme/
+    path: example/
+
+
+flutter_gallery:
+  title: Flutter Gallery
+  description: Flutter Gallery is a resource to help developers evaluate and use Flutter. It is a collection of Material Design & Cupertino widgets, behaviors, and vignettes implemented with Flutter. We often get asked how one can see Flutter in action, and this gallery demonstrates what Flutter provides and how it behaves in the wild..
+  git:
+    url: https://github.com/flutter/gallery
+
+
+    
