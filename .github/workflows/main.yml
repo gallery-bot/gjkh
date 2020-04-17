@@ -15,10 +15,10 @@ jobs:
         with:
           channel: 'dev'
       - run: |
-          cd src/generate
+          cd src/generator
           flutter pub get
       - run: |
-          cd src/generate
+          cd src/generator
           dart bin/generateProject.dart
       - run: |
           cd web
