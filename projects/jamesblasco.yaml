@@ -1,0 +1,8 @@
+
+fluid_layout:
+  title: Fluid Layout  
+  description: Create responsive layouts for mobile, web and desktop. 
+  git:
+    url: https://github.com/jamesblasco/fluid_layout/
+    path: example/
+
