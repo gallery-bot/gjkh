@@ -5,7 +5,8 @@ import 'dart:io';
 
 import 'package:yaml/yaml.dart';
 
-import '../common.dart';
+import '../generator.dart';
+import '../utils/common.dart';
 import 'project.dart';
 
 List<Project> parseProjectList({String dir, String filePath}) {
@@ -23,7 +24,7 @@ List<Project> parseProjectList({String dir, String filePath}) {
         MapEntry(key, Project.fromYaml(key, projectPath, value)));
     return projects.values.toList();
   } catch (e) {
-    throwToolExit('An error ocurred while parsing yaml: $filePath \n $e');
-    return null;
+    logger.stderr('An error ocurred while parsing yaml: $filePath \n');
+    rethrow;
   }
 }

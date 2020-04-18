@@ -4,10 +4,10 @@
 
 import 'dart:io';
 import '../utils/directory.dart';
-import '../generateProject.dart';
+import '../generator.dart';
 import 'generate.dart';
 import 'project.dart';
-import '../common.dart';
+import '../utils/common.dart';
 
 
 Future prepareProject(Project project) async {
@@ -44,7 +44,6 @@ Future prepareProject(Project project) async {
 Future buildProject(Project project) async {
   final projectPath = tempDirectory + project.path + project.gitProject.path;
 
-
   final buildProgress = logger.progressSection('Building project');
   final result = await Process.start('flutter',
       ['pub', 'run', 'flutter_showcase', 'build'],
@@ -69,8 +68,6 @@ Future moveWebProject(Project project) async {
   final projectPath = tempDirectory + project.path + project.gitProject.path;
 
   final webPath = webRelativePath + project.path + project.id;
-
-
 
   final moveProjectProgress = logger.progressSection('Move web project to $webPath');
 

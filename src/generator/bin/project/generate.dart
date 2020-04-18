@@ -5,9 +5,9 @@ import 'dart:io';
 
 import '../utils/logging.dart';
 import 'project.dart';
-import '../common.dart';
+import '../utils/common.dart';
 import '../utils/directory.dart';
-import '../generateProject.dart';
+import '../generator.dart';
 
 final tempDirectory = '${galleryPath}temp/';
 
