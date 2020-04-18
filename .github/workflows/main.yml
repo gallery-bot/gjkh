@@ -28,7 +28,7 @@ jobs:
       - name: Generate Projects    
         run: |
           cd src/generator
-          dart bin/generateProject.dart   
+          dart bin/generator.dart   
       - name: Publish web to gh-pages 
         run: |
           cd web
