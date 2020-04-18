@@ -15,7 +15,7 @@ jobs:
         run: |
           git clone -b master https://github.com/flutter/flutter.git
           ls
-          echo "::add-path::/flutter/bin"
+          echo "::add-path::$RUNNER_WORKSPACE/flutter/bin"
       - run: |
           cd src/generator
           flutter pub get
