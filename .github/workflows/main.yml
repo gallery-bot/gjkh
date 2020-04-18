@@ -17,12 +17,18 @@ jobs:
           ls -a
           echo "::add-path::$RUNNER_WORKSPACE/gjkh/flutter/bin"
           echo "::add-path::$GITHUB_WORKSPACE/flutter/bin"
+          echo "::add-path::$RUNNER_WORKSPACE/gjkh/flutter/bin/cache/dart-sdk/bin"
+          echo "::add-path::$GITHUB_WORKSPACE/flutter/bin/cache/dart-sdk/bin"
+          ./flutter/bin/flutter doctor
+      - name: Get packages    
       - run: |
           cd src/generator
           flutter pub get
+      - name: Generate Projects   
       - run: |
           cd src/generator
           dart bin/generateProject.dart
+      - name: Move web to gh-pages       
       - run: |
           cd web
           git init
