@@ -1,0 +1,20 @@
+
+flutter-draggable-scrollbar:
+  title: Draggable Scrollbar   
+  description:  A scrollbar that can be dragge for quickly navigation through a vertical list. Additional option is showing label next to scrollthumb with information about current item. 
+  git:
+    url: https://github.com/fluttercommunity/flutter-draggable-scrollbar/
+    path: example/
+
+
+persist_theme:
+  title: Persist theme
+  description: A Flutter plugin for persisting and dynamically changing the theme.
+  git:
+    url: https://github.com/fluttercommunity/persist_theme/
+    path: example/
+
+
+
+
+    
