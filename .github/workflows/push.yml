@@ -14,6 +14,8 @@ jobs:
       - name: Try if git works
         run: |
           touch example.txt
+          git config --global user.email flutter@jaimeblasco.com
+          git config --global user.name gallery-bot
           git add --all
           git commit -m "Update web"
           git push origin master -f
