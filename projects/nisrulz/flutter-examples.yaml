@@ -14,19 +14,17 @@ flutter-draggable-scrollbar:
     path: example/
 
 
-persist_theme:
-  title: Persist theme
-  description: A Flutter plugin for persisting and dynamically changing the theme.
-  git:
-    url: https://github.com/fluttercommunity/persist_theme/
-    path: example/
-
-
 flutter_gallery:
   title: Flutter Gallery
   description: Flutter Gallery is a resource to help developers evaluate and use Flutter. It is a collection of Material Design & Cupertino widgets, behaviors, and vignettes implemented with Flutter. We often get asked how one can see Flutter in action, and this gallery demonstrates what Flutter provides and how it behaves in the wild..
   git:
     url: https://github.com/flutter/gallery
 
+persist_theme:
+  title: Persist theme
+  description: A Flutter plugin for persisting and dynamically changing the theme.
+  git:
+    url: https://github.com/fluttercommunity/persist_theme/
+    path: example/
 
     
