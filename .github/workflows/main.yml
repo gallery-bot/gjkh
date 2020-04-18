@@ -14,8 +14,9 @@ jobs:
       - name: Install Flutter
         run: |
           git clone -b master https://github.com/flutter/flutter.git
-          ls
-          echo "::add-path::$RUNNER_WORKSPACE/flutter/bin"
+          ls -a
+          echo "::add-path::$RUNNER_WORKSPACE/gjkh/flutter/bin"
+          echo "::add-path::$GITHUB_WORKSPACE/flutter/bin"
       - run: |
           cd src/generator
           flutter pub get
