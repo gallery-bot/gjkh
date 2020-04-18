@@ -31,7 +31,7 @@ jobs:
           dart bin/generator.dart   
       - name: Publish web to gh-pages 
         run: |
-          cd web
+          cd build/web
           git init
           git config --global user.email flutter@jaimeblasco.com
           git config --global user.name gallery-bot
