@@ -21,13 +21,15 @@ jobs:
           echo "::add-path::$GITHUB_WORKSPACE/flutter/bin/cache/dart-sdk/bin"
           ./flutter/bin/flutter doctor
       - name: Get packages    
-      - run: |
+        run: |
           cd src/generator
           flutter pub get
-      - run: |
+      - name: Generate Projects    
+        run: |
           cd src/generator
           dart bin/generateProject.dart   
-      - run: |
+      - name: Publish web to gh-pages 
+        run: |
           cd web
           git init
           git config --global user.email flutter@jaimeblasco.com
