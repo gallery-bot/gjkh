@@ -28,5 +28,5 @@ jobs:
       - name: Generate Projects    
         run: |
           cd src/generator
-          dart bin/generateProject.dart   
+          dart bin/generator.dart   
     
