@@ -23,6 +23,7 @@ jobs:
       - name: Get packages    
         run: |
           cd src/generator
+          flutter config --enable-web
           flutter pub get
       - name: Generate Projects    
         run: |
