@@ -7,12 +7,14 @@ on:
 jobs:
   build:
     if: github.event.pull_request.merged == true
-    name: Build Web
+    name: Flutter Gallery - Merge
     env:
       my_secret: ${{secrets.commit_secret}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.commit_secret }}
       - name: Install Flutter
         run: |
           git clone -b master https://github.com/flutter/flutter.git
