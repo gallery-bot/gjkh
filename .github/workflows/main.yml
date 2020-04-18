@@ -24,11 +24,9 @@ jobs:
       - run: |
           cd src/generator
           flutter pub get
-      - name: Generate Projects   
       - run: |
           cd src/generator
-          dart bin/generateProject.dart
-      - name: Move web to gh-pages       
+          dart bin/generateProject.dart   
       - run: |
           cd web
           git init
