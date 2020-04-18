@@ -1,0 +1,32 @@
+name: Validate project
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build Web
+    env:
+      my_secret: ${{secrets.commit_secret}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install Flutter
+        run: |
+          git clone -b master https://github.com/flutter/flutter.git
+          ls -a
+          echo "::add-path::$RUNNER_WORKSPACE/gjkh/flutter/bin"
+          echo "::add-path::$GITHUB_WORKSPACE/flutter/bin"
+          echo "::add-path::$RUNNER_WORKSPACE/gjkh/flutter/bin/cache/dart-sdk/bin"
+          echo "::add-path::$GITHUB_WORKSPACE/flutter/bin/cache/dart-sdk/bin"
+          ./flutter/bin/flutter doctor
+      - name: Get packages    
+        run: |
+          cd src/generator
+          flutter config --enable-web
+          flutter pub get
+      - name: Generate Projects    
+        run: |
+          cd src/generator
+          dart bin/generateProject.dart   
+    
