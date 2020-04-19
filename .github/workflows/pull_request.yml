@@ -34,7 +34,8 @@ jobs:
           cd src/generator
           flutter config --enable-web
           flutter pub get
-      - name: Generate Projects    
+      - name: Generate Projects
+        id: generator    
         run: |
           cd src/generator
           dart bin/generator.dart
@@ -43,6 +44,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.commit_secret }}
         with:
-          msg: "Your showcase project is ready to merge"
+          msg: ${{ steps.generator.outputs.message }}
           check_for_duplicate_msg: true     
     
