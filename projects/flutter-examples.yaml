@@ -1,5 +1,5 @@
 flutter_gallery: 
-  version: 6
+  version: 7
   title: Flutter Gallery
   description: Flutter Gallery is a resource to help developers evaluate and use Flutter. It is a collection of Material Design & Cupertino widgets, behaviors, and vignettes implemented with Flutter. We often get asked how one can see Flutter in action, and this gallery demonstrates what Flutter provides and how it behaves in the wild..
   git:
