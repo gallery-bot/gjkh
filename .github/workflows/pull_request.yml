@@ -17,9 +17,6 @@ jobs:
         with:
           path: src/flutter
           key: flutter
-          restore-keys: |
-            flutter-master-
-            flutter-
       - name: Install Flutter
         if: steps.cache-flutter.outputs.cache-hit != 'true'
         run: |
