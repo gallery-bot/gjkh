@@ -5,5 +5,5 @@ direct-select-flutter:
     url: https://github.com/LanarsInc/direct-select-flutter/
     path: example/
   links:
-
+    pub: https://pub.dev/packages/direct_select
 
