@@ -1,4 +1,5 @@
 direct-select-flutter: 
+  version: 1
   title: Direct Select
   description: DirectSelect is a selection widget with an ethereal, full-screen modal popup displaying the available choices when the widget is interact with.
   git:

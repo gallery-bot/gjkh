@@ -131,7 +131,7 @@ class ProjectChangeHistory {
   factory ProjectChangeHistory.fromJson(Map<String, dynamic> json) {
     return ProjectChangeHistory(
       Project.fromJson(
-        Map<String, dynamic>.from(json['projects']),
+        Map<String, dynamic>.from(json['project']),
       ),
       EnumToString.fromString(VersionChange.values, json['change']),
     );
