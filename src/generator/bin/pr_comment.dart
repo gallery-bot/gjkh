@@ -8,7 +8,7 @@ void main() {
   final changesJson = File(buildPath + 'changes.json').readAsStringSync();
   List<dynamic> json = jsonDecode(changesJson);
   List<ProjectChangeHistory> changes =
-      json.map((e) => ProjectChangeHistory.fromJson(e));
+      json.map((e) => ProjectChangeHistory.fromJson(e)).toList();
 
   String result = r'#### Gallery Version Control<br/><br/>Projects will be available after the Pull Request is merged.<br/>';
   if (changes.isEmpty)
