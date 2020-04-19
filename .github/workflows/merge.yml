@@ -38,7 +38,8 @@ jobs:
           cd src/generator
           flutter config --enable-web
           flutter pub get
-      - name: Generate Projects    
+      - name: Generate Projects
+        id: generator        
         run: |
           cd src/generator
           dart bin/generator.dart
