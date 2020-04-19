@@ -25,9 +25,9 @@ jobs:
           ./src/flutter/bin/flutter doctor
       - name: Setup Flutter
         run: |
-          flutter config --enable-web
           echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin"
           echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin/cache/dart-sdk/bin"
+          ./src/flutter/bin/flutter config --enable-web
       - name: Get packages    
         run: |
           cd src/generator
