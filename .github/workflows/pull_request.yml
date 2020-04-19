@@ -44,6 +44,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.commit_secret }}
         with:
-          msg: ${{ steps.generator.outputs.message }}
+          msg: "${{ steps.generator.outputs.message }}"
           check_for_duplicate_msg: true     
     
