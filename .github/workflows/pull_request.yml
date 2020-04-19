@@ -1,4 +1,4 @@
-name: Validate project
+name: Validate project - PR
 on:
   pull_request:
     branches:
