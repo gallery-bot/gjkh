@@ -1,0 +1,6 @@
+history-of-everything:
+  title: History Of Everything   
+  description:  The History of Everything is a vertical timeline that allows you to navigate, explore, and compare events from the Big Bang to the birth of the Internet. Events are beautifully illustrated and animated.
+  git:
+    url: https://github.com/2d-inc/HistoryOfEverything/
+    path: app/
