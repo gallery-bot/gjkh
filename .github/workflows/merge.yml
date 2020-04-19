@@ -19,17 +19,19 @@ jobs:
         id: cache-flutter
         uses: actions/cache@v1
         with:
-          path: flutter
+          path: src/flutter
           key: flutter
           restore-keys: |
             flutter-master-
             flutter-
       - name: Install Flutter
         run: |
+          cd src/
           git clone -b master https://github.com/flutter/flutter.git
-          echo "::add-path::$GITHUB_WORKSPACE/flutter/bin"
-          echo "::add-path::$GITHUB_WORKSPACE/flutter/bin/cache/dart-sdk/bin"
-          ./flutter/bin/flutter doctor
+          cd ../
+          echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin"
+          echo "::add-path::$GITHUB_WORKSPACE/src/bin/cache/dart-sdk/bin"
+          ./src/flutter/bin/flutter doctor
       - name: Get packages    
         run: |
           cd src/generator
@@ -50,7 +52,8 @@ jobs:
           git checkout -b gh-pages
           git add --all
           git commit -m "Update web"
-          git push origin gh-pages -f       
+          git push origin gh-pages -f
+          rm -rf .git       
       - name: Save changes in master
         run: |
           git config --global user.email flutter@jaimeblasco.com
