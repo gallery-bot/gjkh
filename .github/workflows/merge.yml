@@ -53,9 +53,9 @@ jobs:
           git remote add origin https://${{secrets.commit_secret}}@github.com/gallery-bot/gjkh.git
           git checkout -b gh-pages
           git add --all
-          git commit -m "Update web"
+          git diff --quiet && git diff --staged --quiet || git commit -am 'Update web'
           git push origin gh-pages -f
-          rm -rf .git .gitmodules      
+          rm -rf .git*  
       - name: Save changes in master
         run: |
           git config --global user.email flutter@jaimeblasco.com
