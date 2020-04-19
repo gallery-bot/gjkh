@@ -34,7 +34,6 @@ Future prepareProject(Project project) async {
 Future buildProject(Project project) async {
   final projectPath = tempDirectory + project.path + project.gitProject.path;
 
-  final linksString = jsonEncode(project.links);
 
   final buildProgress = logger.progressSection('Building project');
   final result = await Process.start(
@@ -47,7 +46,6 @@ Future buildProject(Project project) async {
         '--title="${project.title}"',
         '--description="${project.description}"',
         '--github_url="${project.gitProject.fullPath}"',
-        '--links="$linksString"'
       ],
       workingDirectory: projectPath,
       runInShell: true);
