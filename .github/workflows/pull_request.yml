@@ -11,22 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Publish web to gh-pages 
-        run: |
-          cd build/web
-          git init
-          git config --global user.email flutter@jaimeblasco.com
-          git config --global user.name gallery-bot
-          git status
-          git remote add origin https://${{secrets.commit_secret}}@github.com/gallery-bot/gjkh.git
-          git checkout -b gh-pages
-          git add --all
-          if !(git diff --quiet && git diff --staged --quiet);
-          then
-              git commit -am 'Update web'
-              git push origin gh-pages -f
-          fi    
-          rm -rf .git*  
       - name: Cache Flutter
         id: cache-flutter
         uses: actions/cache@v1
