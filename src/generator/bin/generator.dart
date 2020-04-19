@@ -53,4 +53,13 @@ void main(List<String> args) async {
 
   Directory(tempDirectory).removeIfExistsSync();
   logger.stdout('All projects where created succesfully. 💙');
+  
+  
+  await Process.run(
+      'echo',
+      [
+        '"::set-output name=message::Hello"',
+      ],
+      workingDirectory: '$galleryPath', 
+      runInShell: true);
 }
