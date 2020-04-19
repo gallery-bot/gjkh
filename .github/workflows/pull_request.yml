@@ -37,5 +37,12 @@ jobs:
       - name: Generate Projects    
         run: |
           cd src/generator
-          dart bin/generator.dart   
+          dart bin/generator.dart
+      - name: Comment PR
+        uses: unsplash/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.commit_secret }}
+        with:
+          msg: "Your showcase project is ready to merge"
+          check_for_duplicate_msg: true     
     
