@@ -37,11 +37,12 @@ jobs:
         run: |
           cd src/generator
           dart bin/generator.dart
+          echo "::set-output name=message::$(dart bin/generator.dart)"
       - name: Comment PR
         uses: unsplash/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.commit_secret }}
         with:
-          msg: $(dart .src/generator/bin/pr_comment.dart)
+          msg: "${{ steps.generator.outputs.message }}"
           check_for_duplicate_msg: true     
     
