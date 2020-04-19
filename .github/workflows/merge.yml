@@ -25,6 +25,7 @@ jobs:
             flutter-master-
             flutter-
       - name: Install Flutter
+        if: steps.cache-flutter.outputs.cache-hit != 'true'
         run: |
           cd src/
           git clone -b master https://github.com/flutter/flutter.git
