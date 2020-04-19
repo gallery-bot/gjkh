@@ -3,4 +3,12 @@ whatsapp-clone:
   description:  Building a WhatsApp Clone in Flutter.
   git:
     url: https://github.com/iampawan/FlutterWhatsAppClone/
+    
+instagram-clone:
+  title: Instagram Clone   
+  description:  Building a Instagram Clone in Flutter.
+  git:
+    url: https://github.com/iampawan/Flutter-Instagram-UI-Clone
+    
+
 
