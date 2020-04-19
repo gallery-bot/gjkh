@@ -22,10 +22,10 @@ jobs:
         run: |
           cd src/
           git clone -b master https://github.com/flutter/flutter.git
-          ./src/flutter/bin/flutter flutter config --enable-web
           ./src/flutter/bin/flutter doctor
       - name: Setup Flutter
         run: |
+          flutter config --enable-web
           echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin"
           echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin/cache/dart-sdk/bin"
       - name: Get packages    
