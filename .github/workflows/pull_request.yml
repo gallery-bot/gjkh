@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Publish web to gh-pages 
+      - name: test
         run: |
           cd build/web
           git init
