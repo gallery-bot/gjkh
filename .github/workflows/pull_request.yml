@@ -36,6 +36,7 @@ jobs:
         run: |
           cd src/generator
           dart bin/generator.dart
+          echo "::set-output name=message::Hello"
       - name: Comment PR
         uses: unsplash/comment-on-pr@master
         env:
