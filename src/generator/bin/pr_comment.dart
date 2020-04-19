@@ -15,11 +15,11 @@ void main() {
     result += r'No changes were found in any project<br/>';
   else {
     final updatedProjects =
-        changes.where((element) => element.change == VersionChange.update);
+        changes.where((element) => element.change == VersionChange.update).toList();
     final createdProjects =
-        changes.where((element) => element.change == VersionChange.create);
+        changes.where((element) => element.change == VersionChange.create).toList();
     final deletedProjects =
-        changes.where((element) => element.change == VersionChange.delete);
+        changes.where((element) => element.change == VersionChange.delete).toList();
 
     if (createdProjects.isNotEmpty) {
       result += generateTable('Created Projects', createdProjects);
@@ -32,7 +32,7 @@ void main() {
       result += simpleTable('Deleted Projects', deletedProjects);
     }
   }
-  
+
   stdout.write(result);
 
   //stdout.write(+changesJson + r'<br/> test');
