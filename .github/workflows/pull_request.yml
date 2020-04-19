@@ -22,10 +22,15 @@ jobs:
         run: |
           cd src/
           git clone -b master https://github.com/flutter/flutter.git
-          cd ../
           echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin"
           echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin/cache/dart-sdk/bin"
+          cd ../
           ./src/flutter/bin/flutter doctor
+      - name: Setup Flutter
+        if: steps.cache-flutter.outputs.cache-hit == 'true'
+        run: |
+          echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin"
+          echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin/cache/dart-sdk/bin"
       - name: Get packages    
         run: |
           cd src/generator
