@@ -42,6 +42,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.commit_secret }}
         with:
-          msg: "$(dart .src/generator/bin/pr_comment.dart)"
+          msg: $(dart .src/generator/bin/pr_comment.dart)
           check_for_duplicate_msg: true     
     
