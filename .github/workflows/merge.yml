@@ -15,6 +15,15 @@ jobs:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.commit_secret }}
+      - name: Cache Flutter
+        id: cache-flutter
+        uses: actions/cache@v1
+        with:
+          path: flutter
+          key: flutter
+          restore-keys: |
+            flutter-master-
+            flutter-
       - name: Install Flutter
         run: |
           git clone -b master https://github.com/flutter/flutter.git
