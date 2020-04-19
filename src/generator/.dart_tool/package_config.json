@@ -74,6 +74,12 @@
       "languageVersion": "2.7"
     },
     {
+      "name": "enum_to_string",
+      "rootUri": "file:///home/runner/.pub-cache/hosted/pub.dartlang.org/enum_to_string-1.0.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "equatable",
       "rootUri": "file:///home/runner/.pub-cache/hosted/pub.dartlang.org/equatable-1.1.1",
       "packageUri": "lib/",
@@ -93,7 +99,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///home/runner/work/gjkh/gjkh/flutter/packages/flutter",
+      "rootUri": "file:///home/runner/work/gjkh/gjkh/src/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "2.2"
     },
@@ -105,7 +111,7 @@
     },
     {
       "name": "flutter_showcase",
-      "rootUri": "file:///home/runner/.pub-cache/hosted/pub.dartlang.org/flutter_showcase-0.0.2",
+      "rootUri": "file:///home/runner/.pub-cache/hosted/pub.dartlang.org/flutter_showcase-0.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -117,13 +123,13 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///home/runner/work/gjkh/gjkh/flutter/packages/flutter_test",
+      "rootUri": "file:///home/runner/work/gjkh/gjkh/src/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "2.2"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///home/runner/work/gjkh/gjkh/flutter/packages/flutter_web_plugins",
+      "rootUri": "file:///home/runner/work/gjkh/gjkh/src/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -207,7 +213,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///home/runner/work/gjkh/gjkh/flutter/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///home/runner/work/gjkh/gjkh/src/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "1.11"
     },
@@ -302,7 +308,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-04-18T13:47:47.514489Z",
+  "generated": "2020-04-19T08:22:34.874542Z",
   "generator": "pub",
   "generatorVersion": "2.9.0-1.0.dev.flutter-5b19445d9c"
 }
