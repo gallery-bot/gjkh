@@ -22,7 +22,7 @@ jobs:
         run: |
           cd src/
           git clone -b master https://github.com/flutter/flutter.git
-          ./src/flutter/bin/flutter doctor
+          ./flutter/bin/flutter doctor
       - name: Setup Flutter
         run: |
           echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin"
