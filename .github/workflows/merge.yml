@@ -42,6 +42,7 @@ jobs:
         run: |
           cd src/generator
           dart bin/generator.dart
+          echo "::set-output name=message::$(dart bin/pr_comment.dart)"
       - name: Publish web to gh-pages 
         run: |
           cd build/web
@@ -54,7 +55,7 @@ jobs:
           git add --all
           git commit -m "Update web"
           git push origin gh-pages -f
-          rm -rf .git       
+          rm -rf .git .gitmodules      
       - name: Save changes in master
         run: |
           git config --global user.email flutter@jaimeblasco.com
@@ -62,3 +63,12 @@ jobs:
           git add --all
           git commit -m "Autoroll-Update"
           git push origin master
+      - name: Comment PR
+        uses: unsplash/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.commit_secret }}
+        with:
+          msg: "${{ steps.generator.outputs.message }}"
+          check_for_duplicate_msg: true     
+    
+
