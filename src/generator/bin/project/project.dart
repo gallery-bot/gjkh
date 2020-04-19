@@ -7,6 +7,7 @@ class Project extends Equatable {
   final String id;
   final String path;
   final String version;
+  final Map<String, String> links;
   final GitProject gitProject;
 
   Project({
@@ -16,15 +17,25 @@ class Project extends Equatable {
     this.version,
     this.id,
     this.gitProject,
+    this.links = const {},
   });
 
   factory Project.fromYaml(String id, String path, YamlMap yaml) {
+    Map<String, String> getLinks() {
+      final links = yaml['links'];
+      if (links is YamlMap) {
+        return Map<String, String>.from(links);
+      }
+      return null;
+    }
+
     return Project(
       id: id,
       path: path,
       version: yaml['version'].toString() ?? '',
       description: yaml['description'],
       title: yaml['title'],
+      links: getLinks(),
       gitProject: GitProject.fromYaml(yaml['git']),
     );
   }
@@ -37,9 +48,11 @@ class Project extends Equatable {
       title: json['title'],
       version: json['version'],
       gitProject: GitProject.fromJson(Map<String, dynamic>.from(json['git'])),
+      links: json['links'] != null
+          ? Map<String, String>.from(json['links'])
+          : null,
     );
   }
-
 
   Map<String, dynamic> toJson() {
     return {
@@ -49,6 +62,7 @@ class Project extends Equatable {
       'version': version,
       'title': title,
       'git': gitProject,
+      'links': links
     };
   }
 
@@ -62,6 +76,8 @@ class Project extends Equatable {
 class GitProject extends Equatable {
   final String url;
   final String path;
+
+  String get fullPath => url + path;
 
   GitProject({this.url, this.path = ''});
 

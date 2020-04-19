@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:enum_to_string/enum_to_string.dart';
 import 'package:equatable/equatable.dart';
 
 import 'generator.dart';
@@ -15,15 +16,12 @@ void main(List<String> args) {
   VersionControl();
 }
 
-
 class VersionControl {
-
   List<ProjectChangeHistory> changes;
 
   VersionControl() {
     generateProjectList();
   }
-
 
   void generateProjectList() {
     Progress progress = logger.progress('Parsing projects');
@@ -36,12 +34,11 @@ class VersionControl {
       if (file is File && file.path.endsWith('.yaml')) {
         final path = file.path.replaceFirst(projectsRelativePath, '');
         final fileProjects =
-        parseProjectList(dir: projectsRelativePath, filePath: path);
+            parseProjectList(dir: projectsRelativePath, filePath: path);
         fileProjects.forEach((project) {
           final key = project.path + project.id + '/';
           if (projects[key] != null) {
-            throw ('Project ${project.id} already exits in ${project
-                .path}.yaml');
+            throw ('Project ${project.id} already exits in ${project.path}.yaml');
           }
           projects[key] = project;
         });
@@ -69,8 +66,8 @@ class VersionControl {
       compareVersionProgress.finishWithTick();
       logger.stdout('Found changes in ${changes.length} projects');
 
-      /*  File('${buildPath}changes.json')
-        .writeAsStringSync(jsonEncode(changes.toList()));*/
+      File('${buildPath}changes.json')
+          .writeAsStringSync(jsonEncode(changes.map((e) => e.toJson()).toList()));
     } catch (e) {
       compareVersionProgress.finishWithError();
       logger.stderr('Error while checking changes in projects');
@@ -78,9 +75,10 @@ class VersionControl {
     }
   }
 
-
-  List<ProjectChangeHistory> compareVersions(Map<String, Project> newProjects,
-      Map<String, Project> oldProjects,) {
+  List<ProjectChangeHistory> compareVersions(
+    Map<String, Project> newProjects,
+    Map<String, Project> oldProjects,
+  ) {
     Set<String> removedKeys = oldProjects.keys.toSet();
     removedKeys.removeAll(newProjects.keys.toSet());
 
@@ -88,9 +86,9 @@ class VersionControl {
     addedKeys.removeAll(oldProjects.keys.toSet());
 
     final newEntriesSet =
-    newProjects.entries.map((e) => EquatableMapEntry.from(e)).toSet();
+        newProjects.entries.map((e) => EquatableMapEntry.from(e)).toSet();
     final oldEntriesSet =
-    oldProjects.entries.map((e) => EquatableMapEntry.from(e)).toSet();
+        oldProjects.entries.map((e) => EquatableMapEntry.from(e)).toSet();
     Set<EquatableMapEntry<String, Project>> changedProjects = newEntriesSet;
     changedProjects.removeAll(oldEntriesSet);
 
@@ -106,7 +104,7 @@ class VersionControl {
         return ProjectChangeHistory(project, VersionChange.create);
       }),
       ...changedProjects.where((entry) => oldProjects[entry.key] != null).map(
-            (entry) {
+        (entry) {
           final project = entry.value;
           logger.stdoutSection('Updated: ${project.title}');
           return ProjectChangeHistory(project, VersionChange.update);
@@ -114,7 +112,6 @@ class VersionControl {
       ),
     ];
   }
-
 }
 
 enum VersionChange { delete, update, create }
@@ -124,9 +121,21 @@ class ProjectChangeHistory {
   final Project project;
 
   ProjectChangeHistory(
-      this.project,
-      this.change,
-      );
+    this.project,
+    this.change,
+  );
+
+  Map<String, dynamic> toJson() =>
+      {'change': EnumToString.parse(change), 'project': project.toJson()};
+
+  factory ProjectChangeHistory.fromJson(Map<String, dynamic> json) {
+    return ProjectChangeHistory(
+      Project.fromJson(
+        Map<String, dynamic>.from(json['projects']),
+      ),
+      EnumToString.fromString(VersionChange.values, json['change']),
+    );
+  }
 }
 
 class EquatableMapEntry<K, V> extends Equatable {

@@ -12,7 +12,9 @@ dependencies:
     sdk: flutter
   equatable: ^1.1.1
   flutter_showcase:
+    path: '../../../../Projects/flutter_showcase'
   yaml:
+  enum_to_string: ^1.0.9
 
 dev_dependencies:
   flutter_test:

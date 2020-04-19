@@ -51,5 +51,6 @@ void main(List<String> args) async {
     logger.divider();
   }
 
+  Directory(tempDirectory).removeIfExistsSync();
   logger.stdout('All projects where created succesfully. 💙');
 }
