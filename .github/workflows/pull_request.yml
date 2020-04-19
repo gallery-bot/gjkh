@@ -22,31 +22,26 @@ jobs:
         run: |
           cd src/
           git clone -b master https://github.com/flutter/flutter.git
-          echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin"
-          echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin/cache/dart-sdk/bin"
-          cd ../
+          ./src/flutter/bin/flutter flutter config --enable-web
           ./src/flutter/bin/flutter doctor
       - name: Setup Flutter
-        if: steps.cache-flutter.outputs.cache-hit == 'true'
         run: |
           echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin"
           echo "::add-path::$GITHUB_WORKSPACE/src/flutter/bin/cache/dart-sdk/bin"
       - name: Get packages    
         run: |
           cd src/generator
-          flutter config --enable-web
           flutter pub get
       - name: Generate Projects
         id: generator    
         run: |
           cd src/generator
           dart bin/generator.dart
-          echo "::set-output name=message::$(flutter doctor)"
       - name: Comment PR
         uses: unsplash/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.commit_secret }}
         with:
-          msg: "${{ steps.generator.outputs.message }}"
+          msg: "$(dart .src/generator/bin/pr_comment.dart)"
           check_for_duplicate_msg: true     
     
