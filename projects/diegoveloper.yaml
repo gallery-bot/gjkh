@@ -1,0 +1,5 @@
+flutter-samples:
+  title: Flutter Samples
+  description: Awesome Flutter examples built by @diegoveloper.
+  git:
+    url: https://github.com/diegoveloper/flutter-samples
