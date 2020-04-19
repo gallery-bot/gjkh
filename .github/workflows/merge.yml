@@ -60,5 +60,5 @@ jobs:
           git config --global user.email flutter@jaimeblasco.com
           git config --global user.name gallery-bot
           git add --all
-          git commit -m "Update web"
-          git push origin master -f
+          git commit -m "Autoroll-Update"
+          git push origin master
