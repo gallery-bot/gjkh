@@ -11,7 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      
+      - name: Cache Flutter
+        id: cache-flutter
+        uses: actions/cache@v1
+        with:
+          path: flutter
+          key: flutter
+          restore-keys: |
+            flutter-master-
+            flutter-
       - name: Install Flutter
+        if: steps.cache-flutter.outputs.cache-hit != 'true'
         run: |
           git clone -b master https://github.com/flutter/flutter.git
           ls -a
