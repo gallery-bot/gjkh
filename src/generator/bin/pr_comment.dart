@@ -10,7 +10,7 @@ void main() {
   List<ProjectChangeHistory> changes =
       json.map((e) => ProjectChangeHistory.fromJson(e)).toList();
 
-  String result = r'#### Gallery Version Control<br/><br/>Projects will be available after the Pull Request is merged.<br/>';
+  String result = r'#### Gallery Version Control<br/><br/>';
   if (changes.isEmpty)
     result += r'No changes were found in any project<br/>';
   else {
