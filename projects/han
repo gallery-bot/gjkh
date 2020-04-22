@@ -1,0 +1,30 @@
+
+flutter_flip_panel: 
+  title: Flip Panel
+  description: A package for flip panel with built-in animation
+  git:
+    url: https://github.com/hnvn/flutter_flip_panel/
+    path: example/
+  links:
+    pub: https://pub.dev/packages/flip_panel/
+    
+ flutter_shimmer: 
+  title: Shimmer
+  description: A package that provides an easy way to add shimmer effect in Flutter project
+  git:
+    url: https://github.com/hnvn/flutter_shimmer/
+    path: example/
+  links:
+    pub: https://pub.dev/packages/shimmer/
+    
+    
+ flutter_pattern_formatter: 
+  title: PatternFormatter
+  description: A Flutter package provides some implementations of TextInputFormatter that format input with pre-defined patterns
+  git:
+    url: https://github.com/hnvn/flutter_pattern_formatter/
+    path: example/
+  links:
+    pub:  https://pub.dev/packages/pattern_formatter/    
+ 
+    
