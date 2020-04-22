@@ -1,0 +1,58 @@
+staggered_grid_view: 
+  title: Staggered Grid View
+  description: A Flutter staggered grid view
+  git:
+    url: https://github.com/letsar/flutter_staggered_grid_view/
+    path: example/
+  links:
+    pub: https://pub.dev/packages/flutter_staggered_grid_view/
+    
+    
+flutter_slidable: 
+  title: Flutter Slidable
+  description: A Flutter implementation of slidable list item with directional slide actions that can be dismissed.
+  git:
+    url: https://github.com/letsar/flutter_slidable/
+    path: example/
+  links:
+    pub: https://pub.dev/packages/flutter_slidable/
+    
+flutter_parallax: 
+  title: Sticky Header
+  description: A Flutter implementation of sticky headers with a sliver as a child..
+  git:
+    url: https://github.com/letsar/flutter_sticky_header/
+    path: example/
+  links:
+    pub: https://pub.dev/packages/flutter_sticky_header
+
+    
+    
+flutter_parallax: 
+  title: Flutter Parallax
+  description: A Flutter widget that moves according to a scroll controller.
+  git:
+    url: https://github.com/letsar/flutter_parallax/
+    path: example/
+  links:
+    pub: https://pub.dev/packages/flutter_parallax
+    
+flutter_sidekick:    
+  title: Flutter Sidekick
+  description: Widgets for creating Hero-like animations between two widgets within the same screen.
+  git:
+    url: https://github.com/letsar/flutter_sidekick/
+    path: example/
+  links:
+    pub: https://pub.dev/packages/flutter_sidekick
+    
+hashwag:    
+  title: Hashwag
+  description: Flutter app that showcases an animation with some Flutter hashtags..
+  git:
+    url: https://github.com/letsar/hashwag/
+   
+    
+  
+        
+    
