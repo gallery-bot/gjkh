@@ -7,8 +7,7 @@ flutter_flip_panel:
     path: example/
   links:
     pub: https://pub.dev/packages/flip_panel/
-    
- flutter_shimmer: 
+flutter_shimmer: 
   title: Shimmer
   description: A package that provides an easy way to add shimmer effect in Flutter project
   git:
@@ -18,7 +17,7 @@ flutter_flip_panel:
     pub: https://pub.dev/packages/shimmer/
     
     
- flutter_pattern_formatter: 
+flutter_pattern_formatter: 
   title: PatternFormatter
   description: A Flutter package provides some implementations of TextInputFormatter that format input with pre-defined patterns
   git:
