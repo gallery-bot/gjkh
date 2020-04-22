@@ -4,12 +4,4 @@ flutter_radial_menu:
   git:
     url: https://github.com/xqwzts/flutter_radial_menu/
     path: example/
- 
-flutter_circular_chart: 
-  title: Circular Chart
-  description: A library for creating animated circular chart widgets with Flutter.
-  git:
-    url: https://github.com/xqwzts/flutter_circular_chart/
-    path: example/   
-  links:
-    pub: https://pub.dev/packages/flutter_circular_chart
+
