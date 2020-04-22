@@ -1,0 +1,6 @@
+modal_bottom_sheet: 
+  title: Modal Bottom Sheet
+  description:  Create advanced modal bottom sheets. Material, Cupertino or your own style
+  git:
+    url: https://github.com/jamesblasco/modal_bottom_sheet/
+    path: example/
