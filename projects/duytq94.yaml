@@ -4,15 +4,7 @@ fb-reactions-animation:
   git:
     url: https://github.com/duytq94/flutter-fb-reactions-animation
     
-    
-intro-slider: 
-  title: INTRO SLIDER
-  description: Simple and configurable app introduction slider for Flutter
-  git:
-    url:  https://github.com/duytq94/flutter-intro-slider 
-  links:
-    pub: https://pub.dev/packages/intro_slider
-
+   
 flutter-demo: 
   title: Demo Flutter
   description: Some UI mostly use when develop Flutter app
