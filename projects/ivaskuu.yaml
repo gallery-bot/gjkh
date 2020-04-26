@@ -5,15 +5,8 @@ tinder_cards:
   description: Tinder like cards swipe effect with Flutter.
   git:
     url: https://github.com/Ivaskuu/tinder_cards/
-
-
-dashboard: 
-  title: Dashboard concept
-  description: A dashboard concept app
-  git:
-    url:  https://github.com/Ivaskuu/dashboard
         
-dashboard: 
+planty: 
   title: Planty
   description: A concept app that I made with Flutter
   git:
