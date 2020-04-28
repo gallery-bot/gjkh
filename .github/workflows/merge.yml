@@ -43,6 +43,7 @@ jobs:
         run: |
           cd src/generator
           dart bin/generator.dart
+          dart bin/readme.dart
           echo "::set-output name=message::$(dart bin/pr_comment.dart)"
       - name: Publish web to gh-pages 
         run: |
