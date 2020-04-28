@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'generator.dart';
+import 'project/project.dart';
 import 'version_control.dart';
 
 void main() {
@@ -10,7 +11,7 @@ void main() {
   List<ProjectChangeHistory> changes =
       json.map((e) => ProjectChangeHistory.fromJson(e)).toList();
 
-  String result = r'#### Gallery Version Control<br/><br/>';
+  String result = r'#### Gallery Version Control<br/><br/>Projects will be available after the Pull Request is merged.<br/>';
   if (changes.isEmpty)
     result += r'No changes were found in any project<br/>';
   else {
@@ -22,11 +23,11 @@ void main() {
         changes.where((element) => element.change == VersionChange.delete).toList();
 
     if (createdProjects.isNotEmpty) {
-      result += generateTable('Created Projects', createdProjects);
+      result += generateTable('Created Projects', createdProjects.map((e) => e.project).toList());
     }
 
     if (updatedProjects.isNotEmpty) {
-      result += generateTable('Updated Projects', updatedProjects);
+      result += generateTable('Updated Projects', updatedProjects.map((e) => e.project).toList());
     }
     if (deletedProjects.isNotEmpty) {
       result += simpleTable('Deleted Projects', deletedProjects);
@@ -38,7 +39,7 @@ void main() {
   //stdout.write(+changesJson + r'<br/> test');
 }
 
-String generateTable(String title, List<ProjectChangeHistory> items) {
+String generateTable(String title, List<Project> items) {
   String result = '<table style="width:100%"><tr><th>' +
       title +
       _spaces +
@@ -47,8 +48,8 @@ String generateTable(String title, List<ProjectChangeHistory> items) {
 
   for (final project in items) {
     final url = 'https://gallery-bot.github.io/gjkh/' +
-        project.project.path +
-        project.project.id +
+        project.path +
+        project.id +
         '/';
 
     result += '<tr>' +
@@ -56,7 +57,7 @@ String generateTable(String title, List<ProjectChangeHistory> items) {
         r'<img height="128" width="200" align="left" src="' +
         '${url}social_media.png' +
         '?raw=true">' +
-        '<h3>${project.project.title}</h3>' +
+        '<h3>${project.title}</h3>' +
         '<a href="$url" >' +
         r'See Showcase' +
         r'</a>' +

@@ -18,6 +18,7 @@ void main(List<String> args) {
 
 class VersionControl {
   List<ProjectChangeHistory> changes;
+  Map<String, Project> projects = {};
 
   VersionControl() {
     generateProjectList();
@@ -26,7 +27,6 @@ class VersionControl {
   void generateProjectList() {
     Progress progress = logger.progress('Parsing projects');
     final rootDirectory = Directory(projectsRelativePath);
-    final Map<String, Project> projects = {};
 
     final list = rootDirectory.listSync(recursive: true);
 
@@ -46,6 +46,8 @@ class VersionControl {
     });
     progress.finishWithTick();
     logger.stdout('Found ${projects.length} projects');
+
+
     String historyContent = jsonEncode(projects);
 
     final file = File('${projectsRelativePath}projects.json');
