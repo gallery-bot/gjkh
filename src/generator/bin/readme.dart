@@ -10,8 +10,6 @@ import 'utils/common.dart';
 
 
 
-Logger logger;
-
 void main(List<String> args) async {
   bool verbose = args.contains('-v');
 
