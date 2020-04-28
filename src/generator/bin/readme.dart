@@ -22,7 +22,7 @@ void main(List<String> args) async {
 
   logger.divider();
 
-  String result = r'##Awesome Gallery Projects<br/><br/>Interact with flutter projects and packages.<br/>';
+  String result = r'# Awesome Gallery<br/><br/>Interact with your flutter projects and packages and share them with just a link <br/>';
 
   result += generateTable('Projects', vs.projects.values.toList());
 
