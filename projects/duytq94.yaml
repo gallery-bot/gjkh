@@ -5,10 +5,4 @@ fb-reactions-animation:
     url: https://github.com/duytq94/flutter-fb-reactions-animation
     
    
-flutter-demo: 
-  title: Demo Flutter
-  description: Some UI mostly use when develop Flutter app
-  git:
-    url:  https://github.com/duytq94/flutter-demo   
-
   
