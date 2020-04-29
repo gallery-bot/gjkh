@@ -38,7 +38,7 @@ const RESOURCES = {
 "assets/images/love2.png": "c0a77e55cbe731d062ee59dbc5ec18d9",
 "assets/images/sad.gif": "9fa24da8b75ac12313a9afb83f2c3e57",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"main.dart.js": "dccd5cb7c3df45ca5e4a7d5443928b49",
+"main.dart.js": "7f1d46e0cfe55886f7c5df9b8ba43f25",
 "manifest.json": "45f063870e5cf120a39396ce0a2a2312"
 };
 

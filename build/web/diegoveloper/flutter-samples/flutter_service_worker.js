@@ -17,7 +17,7 @@ const RESOURCES = {
 "assets/FontManifest.json": "18eda8e36dfa64f14878d07846d6e17f",
 "assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
 "assets/AssetManifest.json": "9eace89f53b643eaaa74149a28911a56",
-"assets/LICENSE": "d5ec9e1355568a8477890f7fd70fc2ad",
+"assets/LICENSE": "560d1994d361c7070c0ee195ce6b3390",
 "assets/images/dash_dart_dark.png": "ed4a76c0ff90ce740861e2f7bce8a853",
 "assets/images/dash_dart.png": "742d2248e4b76e1d4021dcb7d43e141d",
 "assets/images/mesi.png": "1193e84d0125ad7cc86649198f0386c6",
@@ -41,7 +41,7 @@ const RESOURCES = {
 "assets/images/balls/ball1.png": "a1163f2d7cf83328a7b62c1f8d7ef8d9",
 "assets/images/balls/ball3.png": "77dd6e807f3bc50ac4227b08269dbffc",
 "assets/images/balls/ball4.png": "8241ae73551acb56b9d615871c0535c2",
-"main.dart.js": "6e3820dd286c0ef3bae5d9ce488e9e3f"
+"main.dart.js": "0d9c5ef15dbde6e4df64dbc8f929b52e"
 };
 
 self.addEventListener('activate', function (event) {

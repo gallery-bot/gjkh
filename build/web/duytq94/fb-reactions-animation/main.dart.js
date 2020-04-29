@@ -13522,7 +13522,8 @@ y_:function(a,b){C.b3.fw(window,"popstate",b)
 return new H.HN(this,b)},
 glJ:function(a){var t=window.location.hash
 if(t==null)t=""
-return t.length===0?t:C.c.e9(t,1)},
+if(t.length===0||t==="#")return"/"
+return C.c.e9(t,1)},
 qo:function(a){return a.length===0?H.c(window.location.pathname)+H.c(window.location.search):"#"+a},
 ob:function(){var t={},s=new P.J($.F,u.D)
 t.a=null

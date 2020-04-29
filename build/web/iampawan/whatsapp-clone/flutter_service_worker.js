@@ -16,8 +16,8 @@ const RESOURCES = {
 "assets/FontManifest.json": "18eda8e36dfa64f14878d07846d6e17f",
 "assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
 "assets/AssetManifest.json": "2cd18ef48039713e3ca909713a7786f6",
-"assets/LICENSE": "726f6218db6815a1a8367e8569ce4374",
-"main.dart.js": "0844d07c0d627fe53811c66e88a055cd"
+"assets/LICENSE": "32b66406cba092fde20dac292ad66652",
+"main.dart.js": "6c4092099b375c9ee06e7048cc5a5097"
 };
 
 self.addEventListener('activate', function (event) {
