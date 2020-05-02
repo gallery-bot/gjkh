@@ -5,11 +5,3 @@ tinder_cards:
   description: Tinder like cards swipe effect with Flutter.
   git:
     url: https://github.com/Ivaskuu/tinder_cards/
-        
-planty: 
-  title: Planty
-  description: A concept app that I made with Flutter
-  git:
-    url: https://github.com/Ivaskuu/plantly        
-      
-   
